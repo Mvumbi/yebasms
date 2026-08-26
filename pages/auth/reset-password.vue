@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+  layout: 'blank'
+})
+
 import { ref } from 'vue'
 
 const email = ref('')

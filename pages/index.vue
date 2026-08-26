@@ -13,7 +13,6 @@ useHead({
 
 <template>
   <div>
-    <LandingNavBar />
     <LandingHeroSection />
     <LandingStatsBar />
     <LandingFeaturesSection />
@@ -27,6 +26,5 @@ useHead({
     <LandingFaq/>
     <LandingContact/>
     <LandingCtaSection />
-    <LandingFooterSection />
   </div>
 </template>

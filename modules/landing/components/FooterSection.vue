@@ -17,7 +17,7 @@ const columns = [
       { name: 'OTP & 2FA (Email)', href: '#otp' },
       { name: 'Campagnes marketing', href: '#marketing' },
       { name: 'Chat en direct', href: '#chat' },
-      { name: 'Tarifs', href: '#tarifs' },
+      { name: 'Tarifs', href: '/pricing' },
       { name: 'Documentation API', href: '#api' },
     ],
   },
@@ -25,7 +25,7 @@ const columns = [
     title: 'Ressources',
     links: [
       { name: 'Guide de démarrage', href: '#guide' },
-      { name: 'Statut du service', href: '#statut' },
+      { name: 'Statut du service', href: '/status' },
       { name: 'Centre d\'aide', href: '#aide' },
       { name: 'Sécurité & Conformité', href: '#securite' },
     ],
@@ -33,15 +33,15 @@ const columns = [
   {
     title: 'Entreprise',
     links: [
-      { name: 'À propos', href: '#apropos' },
-      { name: 'Contact', href: '#contact' },
-      { name: 'Partenaires', href: '#partenaires' },
+      { name: 'À propos', href: '/about' },
+      { name: 'Contact', href: '/contact' },
+      { name: 'Partenaires', href: '/partenaires' },
     ],
   },
   {
     title: 'Légal',
     links: [
-      { name: 'Conditions d\'utilisation', href: '#cgu' },
+      { name: 'Conditions d\'utilisation', href: '/cgu' },
       { name: 'Confidentialité', href: '#confidentialite' },
     ],
   },
@@ -135,7 +135,7 @@ const socialLinks = [
         <div class="flex space-x-6 text-white/50">
           <a href="#cgu" class="hover:text-white transition-colors">Mentions légales</a>
           <a href="#confidentialite" class="hover:text-white transition-colors">Politique de cookies</a>
-          <a href="#status" class="hover:text-white transition-colors">Statut des systèmes</a>
+          <a href="/status" class="hover:text-white transition-colors">Statut des systèmes</a>
         </div>
       </div>
     </div>

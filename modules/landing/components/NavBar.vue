@@ -5,7 +5,7 @@ const isScrolled = ref(false)
 const links = [
   { label: 'Produit', href: '#produit' },
   { label: 'Cas d\'usage', href: '#cas-usage' },
-  { label: 'Tarifs', href: '#tarifs' },
+  { label: 'Tarifs', href: '/pricing' },
   { label: 'Documentation', href: '/docs' },
 ]
 

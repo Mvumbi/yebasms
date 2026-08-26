@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+  layout: 'blank'
+})
+
 import { ref, onMounted, onUnmounted } from 'vue'
 import { Eye, EyeOff } from 'lucide-vue-next'
 import intlTelInput from 'intl-tel-input'
@@ -211,7 +215,7 @@ const handleRegister = () => {
             class="mt-0.5 rounded border-ink/20 text-primary focus:ring-primary w-4 h-4 cursor-pointer"
           />
           <label for="terms" class="text-ink-soft font-medium cursor-pointer select-none">
-            J'accepte les <a href="#terms" class="text-primary hover:underline font-semibold">conditions générales d'utilisation</a> de yebaSMS.
+            J'accepte les <a href="/cgu" class="text-primary hover:underline font-semibold">conditions générales d'utilisation</a> de yebaSMS.
           </label>
         </div>
 

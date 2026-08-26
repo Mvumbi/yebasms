@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+  layout: 'blank'
+})
+
 import { ref, nextTick } from 'vue'
 
 // Tableau de 6 chiffres pour l'OTP

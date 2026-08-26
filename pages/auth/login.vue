@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+  layout: 'blank'
+})
+
 import { ref } from 'vue'
 import { Eye, EyeOff } from 'lucide-vue-next'
 
