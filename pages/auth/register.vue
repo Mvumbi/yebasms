@@ -78,7 +78,8 @@ const handleRegister = () => {
 
     <div class="absolute w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl pointer-events-none -top-32 -right-32"></div>
 
-    <div class="relative w-full max-w-lg bg-white rounded-xl border border-ink/15 p-8 shadow-sm">
+    <!-- Conteneur élargi à max-w-2xl pour garantir la disposition en flex sur une seule ligne -->
+    <div class="relative w-full max-w-2xl bg-white rounded-xl border border-ink/15 p-8 shadow-sm">
 
       <div class="text-center mb-8">
         <span class="font-display text-2xl font-bold text-ink tracking-tight">YebaSMS</span>
@@ -88,6 +89,7 @@ const handleRegister = () => {
 
       <form @submit.prevent="handleRegister" class="space-y-4">
 
+        <!-- Ligne 1 : Nom et Prénom en flex -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div class="space-y-1.5">
             <label for="lastName" class="block text-xs font-medium text-ink-soft">
@@ -99,7 +101,7 @@ const handleRegister = () => {
               v-model="lastName"
               required
               placeholder="Dupont"
-              class="w-full rounded-xl border border-ink/15 bg-bg px-4 py-3 text-sm text-ink placeholder:text-ink-soft/40 outline-none transition-all duration-300 hover:border-ink/30 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10"
+              class="w-full rounded-xl border border-ink/15 bg-bg px-4 py-3 text-base sm:text-sm text-ink placeholder:text-ink-soft/40 outline-none transition-all duration-300 hover:border-ink/30 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10"
             />
           </div>
 
@@ -113,37 +115,39 @@ const handleRegister = () => {
               v-model="firstName"
               required
               placeholder="Jean"
-              class="w-full rounded-xl border border-ink/15 bg-bg px-4 py-3 text-sm text-ink placeholder:text-ink-soft/40 outline-none transition-all duration-300 hover:border-ink/30 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10"
+              class="w-full rounded-xl border border-ink/15 bg-bg px-4 py-3 text-base sm:text-sm text-ink placeholder:text-ink-soft/40 outline-none transition-all duration-300 hover:border-ink/30 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10"
             />
           </div>
         </div>
 
-        <div class="space-y-1.5">
-          <label for="email" class="block text-xs font-medium text-ink-soft">
-            Adresse email
-          </label>
-          <input
-            id="email"
-            type="email"
-            v-model="email"
-            required
-            placeholder="contact@yebasms.com"
-            class="w-full rounded-xl border border-ink/15 bg-bg px-4 py-3 text-sm text-ink placeholder:text-ink-soft/40 outline-none transition-all duration-300 hover:border-ink/30 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10"
-          />
-        </div>
+        <!-- Ligne 2 : Numéro de téléphone et Adresse email en flex -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="space-y-1.5">
+            <label for="phone" class="block text-xs font-medium text-ink-soft">
+              Numéro de téléphone
+            </label>
+            <div class="phone-wrapper w-full">
+              <input
+                ref="phoneInputRef"
+                id="phone"
+                type="tel"
+                required
+                class="w-full rounded-xl border border-ink/15 bg-bg px-4 py-3 text-base sm:text-sm text-ink placeholder:text-ink-soft/40 outline-none transition-all duration-300 hover:border-ink/30 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10"
+              />
+            </div>
+          </div>
 
-        <!-- Champ téléphone -->
-        <div class="space-y-1.5">
-          <label for="phone" class="block text-xs font-medium text-ink-soft">
-            Numéro de téléphone
-          </label>
-          <div class="phone-wrapper w-full">
+          <div class="space-y-1.5">
+            <label for="email" class="block text-xs font-medium text-ink-soft">
+              Adresse email
+            </label>
             <input
-              ref="phoneInputRef"
-              id="phone"
-              type="tel"
+              id="email"
+              type="email"
+              v-model="email"
               required
-              class="w-full rounded-xl border border-ink/15 bg-bg px-4 py-3 text-sm text-ink placeholder:text-ink-soft/40 outline-none transition-all duration-300 hover:border-ink/30 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10"
+              placeholder="contact@yebasms.com"
+              class="w-full rounded-xl border border-ink/15 bg-bg px-4 py-3 text-base sm:text-sm text-ink placeholder:text-ink-soft/40 outline-none transition-all duration-300 hover:border-ink/30 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10"
             />
           </div>
         </div>
@@ -159,7 +163,7 @@ const handleRegister = () => {
               v-model="password"
               required
               placeholder="••••••••"
-              class="w-full rounded-xl border border-ink/15 bg-bg pl-4 pr-12 py-3 text-sm text-ink placeholder:text-ink-soft/40 outline-none transition-all duration-300 hover:border-ink/30 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10"
+              class="w-full rounded-xl border border-ink/15 bg-bg pl-4 pr-12 py-3 text-base sm:text-sm text-ink placeholder:text-ink-soft/40 outline-none transition-all duration-300 hover:border-ink/30 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10"
             />
             <button
               type="button"
@@ -184,7 +188,7 @@ const handleRegister = () => {
               v-model="confirmPassword"
               required
               placeholder="••••••••"
-              class="w-full rounded-xl border border-ink/15 bg-bg pl-4 pr-12 py-3 text-sm text-ink placeholder:text-ink-soft/40 outline-none transition-all duration-300 hover:border-ink/30 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10"
+              class="w-full rounded-xl border border-ink/15 bg-bg pl-4 pr-12 py-3 text-base sm:text-sm text-ink placeholder:text-ink-soft/40 outline-none transition-all duration-300 hover:border-ink/30 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10"
             />
             <button
               type="button"
