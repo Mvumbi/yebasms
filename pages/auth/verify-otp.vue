@@ -85,7 +85,7 @@ const resendCode = () => {
             v-model="otp[index]"
             @input="handleInput(index, $event)"
             @keydown="handleKeydown(index, $event)"
-            class="flex-1 min-w-0 h-11 sm:h-12 text-center text-base sm:text-lg font-semibold rounded-xl border border-ink/15 bg-bg text-ink outline-none transition-all duration-300 hover:border-ink/30 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10"
+            class="flex-1 min-w-0 h-11 sm:h-12 text-center text-base sm:text-base font-semibold rounded-xl border border-ink/15 bg-bg text-ink outline-none transition-all duration-300 hover:border-ink/30 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10"
           />
         </div>
 

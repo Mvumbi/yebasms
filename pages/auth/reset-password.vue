@@ -65,7 +65,7 @@ const handleResetPassword = () => {
             type="email"
             required
             placeholder="nom@exemple.com"
-            class="w-full px-4 py-3 text-sm rounded-xl border border-ink/15 bg-bg text-ink outline-none transition-all duration-300 hover:border-ink/30 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10"
+            class="w-full px-4 py-3 text-base sm:text-sm rounded-xl border border-ink/15 bg-bg text-ink outline-none transition-all duration-300 hover:border-ink/30 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10"
           />
         </div>
 

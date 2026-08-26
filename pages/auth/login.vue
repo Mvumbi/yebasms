@@ -51,7 +51,7 @@ const handleLogin = () => {
               v-model="email" 
               required 
               placeholder="contact@yebasms.com"
-              class="w-full rounded-xl border border-ink/15 bg-bg px-4 py-3 text-sm text-ink placeholder:text-ink-soft/40 outline-none transition-all duration-300 hover:border-ink/30 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10"
+              class="w-full rounded-xl border border-ink/15 bg-bg px-4 py-3 text-base sm:text-sm text-ink placeholder:text-ink-soft/40 outline-none transition-all duration-300 hover:border-ink/30 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10"
             />
           </div>
         </div>
@@ -73,7 +73,7 @@ const handleLogin = () => {
               v-model="password" 
               required 
               placeholder="••••••••"
-              class="w-full rounded-xl border border-ink/15 bg-bg pl-4 pr-12 py-3 text-sm text-ink placeholder:text-ink-soft/40 outline-none transition-all duration-300 hover:border-ink/30 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10"
+              class="w-full rounded-xl border border-ink/15 bg-bg pl-4 pr-12 py-3 text-base sm:text-sm text-ink placeholder:text-ink-soft/40 outline-none transition-all duration-300 hover:border-ink/30 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10"
             />
             <!-- Bouton pour afficher / masquer le mot de passe -->
             <button 
