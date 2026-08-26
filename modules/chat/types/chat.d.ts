@@ -1,0 +1,2 @@
+interface Conversation {}
+interface ChatMessage {}

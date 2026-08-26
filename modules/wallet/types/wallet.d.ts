@@ -1,0 +1,2 @@
+interface Wallet {}
+interface Transaction {}

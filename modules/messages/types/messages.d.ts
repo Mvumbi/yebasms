@@ -1,0 +1,2 @@
+interface Message {}
+interface Campaign {}
