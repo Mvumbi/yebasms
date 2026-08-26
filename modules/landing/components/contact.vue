@@ -5,7 +5,6 @@ import { useScrollReveal } from '../composables/useScrollAnimations'
 const sectionRef = ref<HTMLElement | null>(null)
 useScrollReveal(sectionRef)
 
-// État du formulaire
 const form = reactive({
   firstName: '',
   lastName: '',
@@ -19,29 +18,15 @@ const isSubmitted = ref(false)
 
 const handleSubmit = async () => {
   isSubmitting.value = true
-
-  // Simulation d'un envoi d'API (remplacez par votre logique d'envoi réelle)
   await new Promise((resolve) => setTimeout(resolve, 1500))
-
   isSubmitting.value = false
   isSubmitted.value = true
-
-  // Réinitialisation après succès (optionnel)
-  // form.firstName = ''
-  // form.lastName = ''
-  // form.email = ''
-  // form.subject = ''
-  // form.message = ''
 }
 </script>
 
 <template>
   <section ref="sectionRef" class="grid-background relative bg-white py-24 md:py-32 overflow-hidden">
-
-    <!-- Conteneur principal -->
     <div class="mx-auto max-w-2xl px-6 relative z-10">
-
-      <!-- En-tête de section -->
       <div data-reveal class="text-center mb-12 md:mb-14">
         <h2 class="font-display text-3xl font-extrabold tracking-tight text-ink md:text-4xl">
           Parlons de votre projet
@@ -51,13 +36,8 @@ const handleSubmit = async () => {
         </p>
       </div>
 
-      <!-- Carte du formulaire -->
-      <div data-reveal class="bg-white rounded-2xl border border-ink/10 shadow-sm hover:shadow-md transition-shadow duration-300 p-8 md:p-10">
-
-        <!-- Transition douce entre formulaire et confirmation -->
+      <div data-reveal class="bg-white rounded-2xl border border-ink/10 shadow-sm transition-shadow duration-300 p-8 md:p-10">
         <Transition name="fade-swap" mode="out-in">
-
-          <!-- Message de succès -->
           <div v-if="isSubmitted" key="success" class="text-center py-8 space-y-4">
             <div class="success-check mx-auto w-14 h-14 rounded-full border-2 border-ink flex items-center justify-center">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-ink">
@@ -76,10 +56,7 @@ const handleSubmit = async () => {
             </button>
           </div>
 
-          <!-- Formulaire de contact -->
           <form v-else key="form" @submit.prevent="handleSubmit" class="space-y-5">
-
-            <!-- Ligne Prénom / Nom -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div class="field-group" style="--delay: 0ms">
                 <label class="block text-xs font-medium text-ink-soft mb-1.5">Prénom</label>
@@ -88,7 +65,7 @@ const handleSubmit = async () => {
                   type="text"
                   required
                   placeholder="Jean"
-                  class="w-full px-3.5 py-2.5 rounded-lg border border-ink/15 bg-white text-ink text-sm focus:outline-none focus:border-ink/50 focus:ring-4 focus:ring-ink/5 transition-all"
+                  class="w-full px-3.5 py-2.5 rounded-lg border border-ink/15 bg-white text-ink text-sm focus:outline-none focus:border-ink/50 focus:ring-4 focus:ring-ink/5 transition-all text-base sm:text-sm"
                 />
               </div>
               <div class="field-group" style="--delay: 40ms">
@@ -98,12 +75,11 @@ const handleSubmit = async () => {
                   type="text"
                   required
                   placeholder="Dupont"
-                  class="w-full px-3.5 py-2.5 rounded-lg border border-ink/15 bg-white text-ink text-sm focus:outline-none focus:border-ink/50 focus:ring-4 focus:ring-ink/5 transition-all"
+                  class="w-full px-3.5 py-2.5 rounded-lg border border-ink/15 bg-white text-ink text-sm focus:outline-none focus:border-ink/50 focus:ring-4 focus:ring-ink/5 transition-all text-base sm:text-sm"
                 />
               </div>
             </div>
 
-            <!-- Ligne Email / Sujet -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div class="field-group" style="--delay: 80ms">
                 <label class="block text-xs font-medium text-ink-soft mb-1.5">Email professionnel</label>
@@ -112,7 +88,7 @@ const handleSubmit = async () => {
                   type="email"
                   required
                   placeholder="jean.dupont@entreprise.com"
-                  class="w-full px-3.5 py-2.5 rounded-lg border border-ink/15 bg-white text-ink text-sm focus:outline-none focus:border-ink/50 focus:ring-4 focus:ring-ink/5 transition-all"
+                  class="w-full px-3.5 py-2.5 rounded-lg border border-ink/15 bg-white text-ink text-sm focus:outline-none focus:border-ink/50 focus:ring-4 focus:ring-ink/5 transition-all text-base sm:text-sm"
                 />
               </div>
               <div class="field-group" style="--delay: 120ms">
@@ -121,7 +97,7 @@ const handleSubmit = async () => {
                   <select
                     v-model="form.subject"
                     required
-                    class="w-full appearance-none px-3.5 py-2.5 pr-9 rounded-lg border border-ink/15 bg-white text-ink text-sm focus:outline-none focus:border-ink/50 focus:ring-4 focus:ring-ink/5 transition-all cursor-pointer"
+                    class="w-full appearance-none px-3.5 py-2.5 pr-9 rounded-lg border border-ink/15 bg-white text-ink text-sm focus:outline-none focus:border-ink/50 focus:ring-4 focus:ring-ink/5 transition-all cursor-pointer text-base sm:text-sm"
                   >
                     <option value="" disabled selected>Choisissez un sujet</option>
                     <option value="integration">Intégration API WhatsApp</option>
@@ -135,7 +111,6 @@ const handleSubmit = async () => {
               </div>
             </div>
 
-            <!-- Champ Message -->
             <div class="field-group" style="--delay: 160ms">
               <label class="block text-xs font-medium text-ink-soft mb-1.5">Message</label>
               <textarea
@@ -143,35 +118,29 @@ const handleSubmit = async () => {
                 rows="5"
                 required
                 placeholder="Décrivez votre besoin en quelques lignes..."
-                class="w-full px-3.5 py-2.5 rounded-lg border border-ink/15 bg-white text-ink text-sm focus:outline-none focus:border-ink/50 focus:ring-4 focus:ring-ink/5 transition-all resize-none"
+                class="w-full px-3.5 py-2.5 rounded-lg border border-ink/15 bg-white text-ink text-sm focus:outline-none focus:border-ink/50 focus:ring-4 focus:ring-ink/5 transition-all resize-none text-base sm:text-sm"
               ></textarea>
             </div>
 
-            <!-- Bouton de soumission -->
             <div class="field-group pt-1" style="--delay: 200ms">
               <button
                 type="submit"
                 :disabled="isSubmitting"
-                class="group w-full px-6 py-3 rounded-lg bg-primary text-white font-medium text-sm hover:bg-primary/90 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 focus:outline-none focus:ring-4 focus:ring-primary/20 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 disabled:hover:translate-y-0"
+                class="group w-full px-6 py-3 rounded-lg bg-primary text-white font-medium text-sm md:hover:bg-primary/90 md:hover:-translate-y-0.5 md:hover:shadow-lg active:translate-y-0 focus:outline-none focus:ring-4 focus:ring-primary/20 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 disabled:hover:translate-y-0"
               >
                 <span v-if="isSubmitting" class="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
                 <span>{{ isSubmitting ? 'Envoi en cours...' : 'Envoyer le message' }}</span>
                 <svg v-if="!isSubmitting" class="transition-transform duration-200 group-hover:translate-x-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </button>
             </div>
-
           </form>
-
         </Transition>
-
       </div>
-
     </div>
   </section>
 </template>
 
 <style scoped>
-/* Styles pour le quadrillage d'arrière-plan */
 .grid-background {
   position: relative;
 }
@@ -183,20 +152,13 @@ const handleSubmit = async () => {
   width: 100%;
   height: 100%;
   z-index: 0;
-
-  background-image:
-    linear-gradient(to right, theme('colors.gray.200') 1px, transparent 1px),
-    linear-gradient(to bottom, theme('colors.gray.200') 1px, transparent 1px);
-
+  background-image: linear-gradient(to right, theme('colors.gray.200') 1px, transparent 1px), linear-gradient(to bottom, theme('colors.gray.200') 1px, transparent 1px);
   background-size: 40px 40px;
-
   -webkit-mask-image: radial-gradient(circle at center, black, transparent 85%);
   mask-image: radial-gradient(circle at center, black, transparent 85%);
-
   opacity: 0.6;
 }
 
-/* Entrée discrète des champs, légèrement décalée dans le temps */
 .field-group {
   animation: field-in 0.5s ease-out both;
   animation-delay: var(--delay, 0ms);
@@ -213,7 +175,6 @@ const handleSubmit = async () => {
   }
 }
 
-/* Transition entre le formulaire et le message de confirmation */
 .fade-swap-enter-active,
 .fade-swap-leave-active {
   transition: opacity 0.25s ease, transform 0.25s ease;
@@ -227,7 +188,6 @@ const handleSubmit = async () => {
   transform: translateY(-6px);
 }
 
-/* Tracé animé du crochet de confirmation */
 .success-check {
   animation: check-pop 0.4s ease-out;
 }
